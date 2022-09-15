@@ -1,0 +1,133 @@
+:root {
+    --green: rgb(92,165,108);
+    --white: rgb(245,245,245);
+    --gray: rgba(210,210,210,.8);
+    --darkgray: rgba(50,50,50,.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+}
+
+body {
+    font-size: 16px;
+    background-color: rgb(245,245,245);
+}
+
+.header {
+    display: block;
+    width: 100%;
+
+    background-color: var(--green);
+    color: var(--white);
+}
+.header>h1 {
+    text-align: center;
+    width: inherit;
+}
+
+.introduction{
+    text-align: left;
+    width: 80%;
+    margin: 3rem auto;
+}
+
+.emptyblock {
+    display: block;
+    height: 1em;
+}
+
+#timeleft {
+    display: block;
+    margin: auto;
+    font-size: 4rem;
+    text-align: center;
+}
+
+.timer>.wrapper {
+    display: flex;
+    justify-content: center;
+    
+    margin: auto;
+}
+
+.number_input {
+    display: inline-block;
+    margin: 0 .3rem 0 .3rem;
+    width: 5rem;
+    text-align: center;
+}
+
+#startbutton {
+
+    font-size: 1.5rem;
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+    box-shadow: 2px 2px var(--gray);
+    padding: .3em .5em .3em .5em;
+}
+
+#startbutton:hover {
+    cursor: pointer;
+    box-shadow: inset -1px -1px var(--gray);
+}
+
+#resetbutton {
+
+    font-size: 1.2rem;
+    color: var(--darkgray);
+    background-color: var(--gray);
+    border: none;
+    box-shadow: 2px 2px var(--darkgray);
+    padding: .3em .5em .3em .5em;
+}
+
+#resetbutton:hover {
+    cursor: pointer;
+    box-shadow: inset -1px -1px var(--darkgray);
+}
+
+.vertical {
+    flex-direction: column;
+}
+
+.inputwrapper {
+    margin: auto;
+    text-align: center;
+
+}
+
+#error {
+    text-align: center;
+    color: red;
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 350px) {
+    .introduction>.introductiontext {
+        margin-top: 1rem;
+    }
+}
+@media screen and (max-width: 200px) {
+    #timeleft {
+        font-size: 2rem;
+    }
+    .number_input {
+        margin: 0 .1rem 0 .1rem;
+        width: 3rem;
+    }
+    #startbutton {
+        font-size: 1rem;
+    }
+    #resetbutton {
+        font-size: .8rem;
+    }
+}

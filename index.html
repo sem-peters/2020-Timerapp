@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2020 Timer App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="wrapper">
+        <header class="header">
+            <h1 class="headertitle">20-20 Timer App</h1>
+        </header>
+
+        <section class="introduction">
+            <p class="introductiontext">This is an app to help remind you to look away from your screen.</p>
+            <p class="introductiontext">You should aim for: for every 20 minutes of screentime, look 20 seconds away
+                from your screen.</p>
+        </section>
+
+        <main class="timer">
+
+            <span id="timeleft">20:00</span>
+            <div class="wrapper">
+                <input type="tel" name="input_minutes" class="number_input" id="input_minutes" value="20" />
+                <input type="tel" name="input_seconds" class="number_input" id="input_seconds" value="0" />
+            </div>
+            <div class="emptyblock"></div>
+            <div class="wrapper">
+                <input type="button" value="Start timer" id="startbutton">
+            </div>
+            <div class="emptyblock"></div>
+            <div class="wrapper">
+                <input type="button" value="Reset timer" id="resetbutton">
+            </div>
+            <div class="emptyblock"></div>
+            <div class="vertical wrapper">
+                <div class="inputwrapper">
+                    <label for="malevoice">Audio reminder</label>
+                    <input type="checkbox" name="malevoice" id="malevoice_cb">
+                </div>
+                <div class="inputwrapper">
+                    <label for="pushnotification">Push notification</label>
+                    <input type="checkbox" name="pushnotification" id="pushnotification_cb">
+                </div>
+
+                <span id="error"></span>
+            </div>
+        </main>
+
+    </div>
+    <script src="timer.js"></script>
+</body>
+
+</html>
