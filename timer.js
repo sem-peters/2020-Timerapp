@@ -111,17 +111,15 @@ function addListeners() {
     })
 
     resetbutton.addEventListener("click", () => {
-        running_flag = !running_flag;
-        window.clearInterval(timer);
-        
+        stopTimer();
         timeleftUpdate(parseInt(minutes_input.value), parseInt(seconds_input.value));
     })
 }
 
 function stopTimer() {
-    startbutton.value = "Start timer";
     window.clearInterval(timer);
     running_flag = false;
+    startbutton.value = "Start timer";
 }
 
 function doNotification() {
