@@ -6,7 +6,7 @@ const resetbutton = document.querySelector("#resetbutton");
 const malevoice_cb = document.querySelector("#malevoice_cb");
 const pushnotification_cb = document.querySelector("#pushnotification_cb");
 
-const malevoice = new Audio('/malevoice.mp3');
+const malevoice = new Audio('malevoice.mp3');
 
 
 let running_flag = false;
