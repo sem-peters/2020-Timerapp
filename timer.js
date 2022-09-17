@@ -119,10 +119,12 @@ function stopTimer() {
 }
 
 function doNotification() {
+  const isMobile = navigator.userAgentData.mobile
   startDateTime = new Date();
   if (malevoice_cb.checked) {
     malevoice.play();
   }
+  if (isMobile) return;
   if (pushnotification_cb.checked) {
     if (Notification.permission === "granted") {
       new Notification("Look away from the screen!", {
