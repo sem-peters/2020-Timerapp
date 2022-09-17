@@ -8,13 +8,11 @@ const pushnotification_cb = document.querySelector("#pushnotification_cb");
 
 const malevoice = new Audio("malevoice.mp3");
 
-let mins = 0;
-let secs = 0;
-
 let running_flag = false;
 let timer = null;
 let startDateTime = null;
 let dateStillRunningChecker = null;
+let timekeeper = new TimeKeeper(20, 0);
 
 window.onload = () => {
   addListeners();
@@ -52,6 +50,7 @@ function addListeners() {
     }
 
     let value = parseInt(minutes_input.value);
+    timekeeper = new TimeKeeper(value, parseInt(seconds_input.value));
     timeleftUpdate(value, parseInt(seconds_input.value));
   });
 
@@ -69,6 +68,7 @@ function addListeners() {
     }
 
     let value = parseInt(seconds_input.value);
+    timekeeper = new TimeKeeper(parseInt(minutes_input.value), value);
     timeleftUpdate(parseInt(minutes_input.value), value);
   });
 
@@ -76,48 +76,20 @@ function addListeners() {
     if (!running_flag) {
       running_flag = true;
       // Timer wasn't running.
-      startDateTime = new Date();
       startbutton.value = "Stop timer";
 
-      let min_sec = timeleft.innerHTML.split(":");
-      mins = parseInt(min_sec[0]);
-      secs = parseInt(min_sec[1]);
+      timekeeper.tickDown()
+      timeleftUpdate(timekeeper.minutes, timekeeper.seconds);
 
       // Every second, remove a second.
       timer = setInterval(() => {
-        if (mins === 0 && secs === 0) {
-          doNotification();
-          mins = parseInt(minutes_input.value);
-          secs = parseInt(seconds_input.value);
-        } else if (mins > 0 && secs === 0) {
-          mins--;
-          secs = 59;
-        } else {
-          secs--;
-        }
-        timeleftUpdate(mins, secs);
+        timekeeper.tickDown();
+        timeleftUpdate(timekeeper.minutes, timekeeper.seconds);
       }, 1000);
 
       dateStillRunningChecker = setInterval(() => {
-        if (!startDateTime) {
-          return;
-        }
-
-        let nowDate = new Date();
-        let millisDiff = nowDate.getTime() - startDateTime.getTime();
-
-        let minDiff = Math.floor(millisDiff / 1000 / 60);
-        let secDiff = Math.ceil(millisDiff / 1000 - minDiff * 60);
-
-        mins = parseInt(minutes_input.value) - 1 - minDiff;
-        if (mins <= 0) {
-          doNotification();
-          mins = parseInt(minutes_input.value) - 1;
-        }
-        secs = 60 - secDiff;
-
-        console.log("Mins:secs = " + mins + ":" + secs);
-        timeleftUpdate(mins, secs);
+        timekeeper.reSync()
+        timeleftUpdate(timekeeper.minutes, timekeeper.seconds);
       }, 10000);
     } else {
       // Timer was running.
@@ -128,9 +100,10 @@ function addListeners() {
 
   resetbutton.addEventListener("click", () => {
     stopTimer();
+    timekeeper.reset();
     timeleftUpdate(
-      parseInt(minutes_input.value),
-      parseInt(seconds_input.value)
+      timekeeper.minutes,
+      timekeeper.seconds
     );
   });
 }
