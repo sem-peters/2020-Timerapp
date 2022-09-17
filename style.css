@@ -1,7 +1,9 @@
 :root {
     --green: rgb(92,165,108);
+    --darkergreen: rgb(80, 150, 80);
     --white: rgb(245,245,245);
     --gray: rgba(210,210,210,.8);
+    --lightergray: rgba(225,225,225,.8);
     --darkgray: rgba(50,50,50,.6);
 }
 
@@ -67,28 +69,28 @@ body {
     color: var(--white);
     background-color: var(--green);
     border: none;
-    box-shadow: 2px 2px var(--gray);
     padding: .3em .5em .3em .5em;
+    box-shadow: 3px 3px 3px var(--gray);
 }
 
 #startbutton:hover {
     cursor: pointer;
-    box-shadow: inset -1px -1px var(--gray);
+    background-color: var(--darkergreen);
 }
 
 #resetbutton {
 
     font-size: 1.2rem;
     color: var(--darkgray);
-    background-color: var(--gray);
+    background-color: var(--lightergray);
     border: none;
-    box-shadow: 2px 2px var(--darkgray);
+    box-shadow: 1px 1px 1px var(--darkgray);
     padding: .3em .5em .3em .5em;
 }
 
 #resetbutton:hover {
+    background-color: var(--gray);
     cursor: pointer;
-    box-shadow: inset -1px -1px var(--darkgray);
 }
 
 .vertical {
