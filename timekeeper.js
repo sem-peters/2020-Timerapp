@@ -21,7 +21,6 @@ class TimeKeeper {
             doNotification();
             this.minutes = this.starting_minutes;
             this.seconds = this.starting_seconds;
-            document.querySelector("#test").innerHTML = "Test!";
           } else if (this.minutes > 0 && this.seconds <= 0) {
             this.minutes--;
             this.seconds = 59;
