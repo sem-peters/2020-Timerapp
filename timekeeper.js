@@ -6,11 +6,11 @@ class TimeKeeper {
     starting_seconds = 0;
     starting_datetime = new Date();
 
-    constructor(minutes, seconds ){
-        this.starting_minutes = minutes;
-        this.starting_seconds = seconds;
-        this.minutes = minutes;
-        this.seconds = seconds;
+    constructor(minutes_to_set, seconds_to_set ){
+        this.starting_minutes = minutes_to_set;
+        this.starting_seconds = seconds_to_set;
+        this.minutes = minutes_to_set;
+        this.seconds = seconds_to_set;
         this.starting_datetime = new Date();
     }
     display = () => {
