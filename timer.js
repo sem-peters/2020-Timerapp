@@ -17,7 +17,15 @@ let timekeeper = new TimeKeeper(20, 0);
 
 window.onload = () => {
   addListeners();
+  testMobile();
 };
+
+function testMobile() {
+  if (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ||
+   (/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.platform))) {
+    document.querySelector("#messages").innerHTML += "This webapp is designed for desktop and laptop devices, not for phones and tablets. For such devices, it's recommended to install a native app from the device app store. <br>"
+  }
+}
 
 function timeleftUpdate(minutes, seconds) {
   let lefthandside = "";
