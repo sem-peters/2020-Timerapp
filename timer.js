@@ -121,11 +121,11 @@ function stopTimer() {
 
 function doNotification() {
   const isMobile = navigator.userAgentData.mobile
-  startDateTime = new Date();
+  document.querySelector("#error").innerHTML += "isMobile: "+ isMobile + "<br>";
   if (malevoice_cb.checked) {
     malevoice.play();
   }
-  if (isMobile) return;
+  document.querySelector("#error").innerHTML += "audio.checked: " +malevoice_cb.checked + "<br>";
   if (pushnotification_cb.checked) {
     Notification.requestPermission(function(result) {
       if (result === 'granted') {
@@ -136,4 +136,5 @@ function doNotification() {
     });
   
   }
+  document.querySelector("#error").innerHTML += "pushnotification.checked: " + pushnotification_cb.checked + "<br>";
 }
