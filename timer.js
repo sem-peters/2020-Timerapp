@@ -7,6 +7,7 @@ const malevoice_cb = document.querySelector("#malevoice_cb");
 const pushnotification_cb = document.querySelector("#pushnotification_cb");
 
 const malevoice = new Audio("malevoice.mp3");
+navigator.serviceWorker.register('sw.js');
 
 let running_flag = false;
 let timer = null;
@@ -126,21 +127,13 @@ function doNotification() {
   }
   if (isMobile) return;
   if (pushnotification_cb.checked) {
-    if (Notification.permission === "granted") {
-      new Notification("Look away from the screen!", {
-        body: "Look away from the screen!",
-      });
-    } else {
-      Notification.requestPermission((permission) => {
-        if (permission === "granted") {
-          new Notification("Look away from the screen!", {
-            body: "Look away from the screen!",
-          });
-        } else {
-          document.querySelector("#error").innerHTML =
-            "Push notifications disabled";
-        }
-      });
-    }
+    Notification.requestPermission(function(result) {
+      if (result === 'granted') {
+        navigator.serviceWorker.ready.then(function(registration) {
+          registration.showNotification('Look away from the screen!');
+        });
+      }
+    });
+  
   }
 }
