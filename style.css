@@ -103,6 +103,11 @@ body {
 
 }
 
+.messages {
+    max-width: 90%;
+    margin: auto;
+}
+
 #error {
     text-align: center;
     color: red;
