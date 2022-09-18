@@ -120,6 +120,7 @@ function stopTimer() {
 }
 
 function doNotification() {
+  document.querySelector("#error").innerHTML += "In doNotification() function <br>";
   const isMobile = navigator.userAgentData.mobile
   document.querySelector("#error").innerHTML += "isMobile: "+ isMobile + "<br>";
   if (malevoice_cb.checked) {
