@@ -26,6 +26,7 @@ body {
     padding: 1em 0 1em 0;
     color: black;
     box-shadow: 5px 0 5px var(--darkgray);
+    background-color: var(--green);
 }
 .header>h1 {
     text-align: center;
