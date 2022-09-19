@@ -23,8 +23,9 @@ body {
     display: block;
     width: 100%;
 
-    background-color: var(--green);
-    color: var(--white);
+    padding: 1em 0 1em 0;
+    color: black;
+    border-bottom: 1px solid var(--darkgray);
 }
 .header>h1 {
     text-align: center;
@@ -61,6 +62,7 @@ body {
     margin: 0 .3rem 0 .3rem;
     width: 5rem;
     text-align: center;
+    font-size: 1.3rem;
 }
 
 #startbutton {
@@ -84,7 +86,7 @@ body {
     color: var(--darkgray);
     background-color: var(--lightergray);
     border: none;
-    box-shadow: 1px 1px 1px var(--darkgray);
+    box-shadow: 1px 1px 3px var(--darkgray);
     padding: .3em .5em .3em .5em;
 }
 

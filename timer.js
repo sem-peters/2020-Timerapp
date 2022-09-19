@@ -11,7 +11,6 @@ navigator.serviceWorker.register('sw.js');
 
 let running_flag = false;
 let timer = null;
-let startDateTime = null;
 let dateStillRunningChecker = null;
 let timekeeper = new TimeKeeper(20, 0);
 
@@ -103,7 +102,6 @@ function addListeners() {
     } else {
       // Timer was running.
       stopTimer();
-      startDateTime = null;
     }
   });
 
@@ -122,7 +120,6 @@ function stopTimer() {
   timer = null;
   window.clearInterval(dateStillRunningChecker);
   dateStillRunningChecker = null;
-  startDateTime = null;
   running_flag = false;
   startbutton.value = "Start timer";
 }
