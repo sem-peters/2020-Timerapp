@@ -5,6 +5,7 @@
     --gray: rgba(210,210,210,.8);
     --lightergray: rgba(225,225,225,.8);
     --darkgray: rgba(50,50,50,.6);
+    font-size: 16px;
 }
 
 * {
@@ -15,7 +16,6 @@
 }
 
 body {
-    font-size: 16px;
     background-color: rgb(245,245,245);
 }
 
@@ -116,7 +116,7 @@ body {
 }
 
 @media screen and (max-width: 400px) {
-    body {
+    :root {
         font-size: 12px;
     }
 }
@@ -138,5 +138,10 @@ body {
     }
     #resetbutton {
         font-size: .8rem;
+    }
+}
+@media screen and (max-width: 115px) {
+    :root {
+        font-size: 8px;
     }
 }
