@@ -24,7 +24,7 @@ body {
     width: 100%;
 
     padding: 1em 0 1em 0;
-    color: black;
+    color: var(--white);
     box-shadow: 5px 0 5px var(--darkgray);
     background-color: var(--green);
 }
