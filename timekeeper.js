@@ -29,7 +29,7 @@ class TimeKeeper {
           }
     }
     reSync = () => {
-        if (!this.startDateTime) {
+        if (!this.starting_datetime) {
             return;
           }
   
