@@ -39,10 +39,10 @@ class TimeKeeper {
           let minDiff = Math.floor(millisDiff / 1000 / 60);
           let secDiff = Math.ceil(millisDiff / 1000 - minDiff * 60);
   
-          this.minutes = starting_minutes - 1 - minDiff;
+          this.minutes = this.starting_minutes - 1 - minDiff;
           if (this.minutes <= 0) {
             doNotification();
-            this.minutes = starting_minutes - 1;
+            this.minutes = this.starting_minutes - 1;
           }
           this.seconds = 60 - secDiff;
     }
