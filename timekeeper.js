@@ -34,7 +34,7 @@ class TimeKeeper {
           }
   
           let nowDate = new Date();
-          let millisDiff = nowDate.getTime() - this.startDateTime.getTime();
+          let millisDiff = nowDate.getTime() - this.starting_datetime.getTime();
   
           let minDiff = Math.floor(millisDiff / 1000 / 60);
           let secDiff = Math.ceil(millisDiff / 1000 - minDiff * 60);
