@@ -46,7 +46,7 @@ class TimeKeeper {
       this.minutes -= 1;
       this.seconds += 60
     }
-    if (this.starting_seconds === 0)
+    if (this.seconds > this.starting_seconds)
       this.minutes = this.starting_minutes - 1 - minDiff;
     else this.minutes = this.starting_minutes - minDiff;
 
