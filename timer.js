@@ -89,6 +89,8 @@ function addListeners() {
       timekeeper.tickDown()
       timeleftUpdate(timekeeper.minutes, timekeeper.seconds);
 
+      timekeeper.starting_datetime = new Date();
+
       // Every second, remove a second.
       timer = setInterval(() => {
         timekeeper.tickDown();
@@ -116,12 +118,19 @@ function addListeners() {
 }
 
 function stopTimer() {
+  // Clear timers
   window.clearInterval(timer);
-  timer = null;
   window.clearInterval(dateStillRunningChecker);
+  timer = null;
   dateStillRunningChecker = null;
+
+  // No longer running
   running_flag = false;
   startbutton.value = "Start timer";
+
+  // Move starting minutes to current seconds, reset on next notification to backup_starting_<timeunit>
+  timekeeper.starting_minutes = timekeeper.minutes;
+  timekeeper.starting_seconds = timekeeper.seconds;
 }
 
 function doNotification() {
