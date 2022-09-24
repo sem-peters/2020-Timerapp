@@ -46,6 +46,15 @@ function timeleftUpdate(minutes, seconds) {
 }
 
 function addListeners() {
+
+  document.querySelectorAll(".label_reminder_type").forEach(label => {
+    label.addEventListener("click", event => {
+      const element = event.currentTarget;
+      const cb = element.parentElement.querySelector("input");
+      cb.checked = !cb.checked;
+    })
+  });
+
   minutes_input.addEventListener("input", () => {
     stopTimer();
     minutes_input.value = minutes_input.value.replace(/\D/gim, "");

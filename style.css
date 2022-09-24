@@ -1,10 +1,10 @@
 :root {
-    --green: rgb(92,165,108);
+    --green: rgb(92, 165, 108);
     --darkergreen: rgb(80, 150, 80);
-    --white: rgb(245,245,245);
-    --gray: rgba(210,210,210,.8);
-    --lightergray: rgba(225,225,225,.8);
-    --darkgray: rgba(50,50,50,.6);
+    --white: rgb(245, 245, 245);
+    --gray: rgba(210, 210, 210, .8);
+    --lightergray: rgba(225, 225, 225, .8);
+    --darkgray: rgba(50, 50, 50, .6);
     font-size: 16px;
 }
 
@@ -12,11 +12,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 }
 
 body {
-    background-color: rgb(245,245,245);
+    background-color: rgb(245, 245, 245);
 }
 
 .header {
@@ -28,12 +28,13 @@ body {
     box-shadow: 5px 0 5px var(--darkgray);
     background-color: var(--green);
 }
+
 .header>h1 {
     text-align: center;
     width: inherit;
 }
 
-.introduction{
+.introduction {
     text-align: left;
     width: 80%;
     margin: 3rem auto;
@@ -54,7 +55,7 @@ body {
 .timer>.wrapper {
     display: flex;
     justify-content: center;
-    
+
     margin: auto;
 }
 
@@ -64,6 +65,14 @@ body {
     width: 5rem;
     text-align: center;
     font-size: 1.3rem;
+}
+
+.button {
+    transition: transform 50ms;
+}
+
+.button:hover {
+    transform: translate(0, -1px);
 }
 
 #startbutton {
@@ -121,26 +130,32 @@ body {
         font-size: 12px;
     }
 }
+
 @media screen and (max-width: 350px) {
     .introduction>.introductiontext {
         margin-top: 1rem;
     }
 }
+
 @media screen and (max-width: 200px) {
     #timeleft {
         font-size: 2rem;
     }
+
     .number_input {
         margin: 0 .1rem 0 .1rem;
         width: 3rem;
     }
+
     #startbutton {
         font-size: 1rem;
     }
+
     #resetbutton {
         font-size: .8rem;
     }
 }
+
 @media screen and (max-width: 115px) {
     :root {
         font-size: 8px;
