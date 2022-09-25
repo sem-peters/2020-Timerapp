@@ -20,6 +20,22 @@ body {
     background-color: rgb(245, 245, 245);
 }
 
+.skiplink {
+    font-size: 1.5rem;
+    position: fixed;
+    /* top: -100%; */
+    left: 50%;
+    transform: translate(-50%, -100%);
+    color: black;
+    background-color: aliceblue;
+    padding: .5rem 1rem;
+    
+}
+.skiplink:focus {
+    transform: translate(-50%, 0%);
+    transition:  100ms transform;
+}
+
 .header {
     display: block;
     width: 100%;

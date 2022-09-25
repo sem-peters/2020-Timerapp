@@ -5,6 +5,7 @@ const startbutton = document.querySelector("#startbutton");
 const resetbutton = document.querySelector("#resetbutton");
 const malevoice_cb = document.querySelector("#malevoice_cb");
 const pushnotification_cb = document.querySelector("#pushnotification_cb");
+const skiplinks = document.querySelector('.skiplinks');
 
 const malevoice = new Audio("malevoice.mp3");
 navigator.serviceWorker.register('sw.js');
@@ -44,8 +45,6 @@ function timeleftUpdate(minutes, seconds) {
 
   timeleft.innerHTML = newspan;
 }
-
-function addListeners() {
 
   minutes_input.addEventListener("input", () => {
     stopTimer();

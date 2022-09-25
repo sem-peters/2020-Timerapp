@@ -12,6 +12,10 @@
 </head>
 
 <body>
+    <div>
+        <a class="skiplink" href="#main">Skip to main content</a>
+        <a class="skiplink" href="#footer">Skip to footer menu</a>
+    </div>
     <div class="wrapper">
         <header class="header">
             <h1 class="headertitle">20-20 Timer App</h1>
@@ -23,7 +27,7 @@
                 from your screen.</p>
         </section>
 
-        <main class="timer">
+        <main class="timer" id="main">
 
             <span id="timeleft">20:00</span>
             <div class="wrapper">
@@ -48,9 +52,7 @@
                 <div class="inputwrapper">
                     <label class="label_reminder_type" for="pushnotification_cb">Push notification
                     <input type="checkbox" name="pushnotification" id="pushnotification_cb" checked="true"></label>
-                </div>
-
-                
+                </div>                
             </div>
             <div class="emptyblock"></div>
             <div class="wrapper messages">
@@ -59,6 +61,10 @@
             </div>
         </main>
 
+        <footer id="footer">
+
+
+        </footer>
     </div>
     <script src="timekeeper.js"></script>
     <script src="timer.js"></script>
