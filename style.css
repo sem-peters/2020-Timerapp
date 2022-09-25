@@ -1,5 +1,5 @@
 :root {
-    --green: rgb(92, 165, 108);
+    --green: rgb(84, 157, 100);
     --darkergreen: rgb(80, 150, 80);
     --white: rgb(245, 245, 245);
     --gray: rgba(210, 210, 210, .8);
@@ -9,6 +9,7 @@
 }
 
 * {
+    line-height: 1.5em;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
