@@ -115,7 +115,7 @@ function timeleftUpdate(minutes, seconds) {
       timekeeper.seconds
     );
   });
-}
+
 
 function stopTimer() {
   // Clear timers

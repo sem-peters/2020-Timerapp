@@ -142,7 +142,7 @@ body {
     color: red;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 400px), screen and (max-height: 250px) {
     :root {
         font-size: 12px;
     }
